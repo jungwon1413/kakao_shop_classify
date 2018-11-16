@@ -1,0 +1,39 @@
+{
+    "train_data_list": [
+        "../train.chunk.01",
+        "../train.chunk.02",
+        "../train.chunk.03",
+        "../train.chunk.04",
+        "../train.chunk.05",
+        "../train.chunk.06",
+        "../train.chunk.07",
+        "../train.chunk.08",
+        "../train.chunk.09"
+    ],
+    "dev_data_list": [
+        "../dev.chunk.01"
+    ],
+    "test_data_list": [
+        "../test.chunk.01",
+        "../test.chunk.02"
+    ],
+    "unigram_hash_size": 100000,
+    "min_word_length": 2,
+    "max_word_length": 31,
+    "max_len": 32,
+    "chunk_size": 20000,
+    "db_chunk_size": 100000,
+<<<<<<< HEAD
+    "num_workers": 10,
+    "num_preidct_workers": 2,
+    "embd_size": 512,
+=======
+    "num_workers": 6,
+    "num_predict_workers": 2,
+    "embd_size": 128,
+>>>>>>> e6961dbdcb0dccb7d937393876a09fe3d44df26b
+    "lr": 1e-4,
+    "lr_decay_rate": 5e-6,
+    "num_epochs": 10,
+    "batch_size": 256 
+}
