@@ -23,14 +23,14 @@ import h5py
 import numpy as np
 
 from keras.models import load_model
-from keras.callbacks import ModelCheckpoint, LearningRateScheduler
+from keras.callbacks import ModelCheckpoint
 
 from misc import get_logger, Option
-from network import TextOnly, top1_acc, top5_acc
+from network import TextOnly, top1_acc
 
 opt = Option('./config.json')
-cate1 = json.loads(open('data/cate1.json').read())
-DEV_DATA_LIST = ['data/dev.chunk.01']
+cate1 = json.loads(open('../cate1.json').read())
+DEV_DATA_LIST = ['../dev.chunk.01']
 
 
 class Classifier():
@@ -94,7 +94,7 @@ class Classifier():
         model_fname = os.path.join(model_root, 'model.h5')
         self.logger.info('# of classes(train): %s' % len(meta['y_vocab']))
         model = load_model(model_fname,
-                custom_objects={'top1_acc': top1_acc, 'top5_acc': top5_acc})
+                           custom_objects={'top1_acc': top1_acc})
 
         test_path = os.path.join(test_root, 'data.h5py')
         test_data = h5py.File(test_path, 'r')

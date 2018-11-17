@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 import os
-os.environ['OMP_NUM_THREADS'] = '10'
+os.environ['OMP_NUM_THREADS'] = '1'
 import re
 import sys
 import cPickle
@@ -30,13 +30,6 @@ from keras.utils.np_utils import to_categorical
 from misc import get_logger, Option
 opt = Option('./config.json')
 
-<<<<<<< HEAD
-TRAIN_DATA_LIST = ['data/train.chunk.0%d' % i for i in range(1, 10)]
-DEV_DATA_LIST = ['data/dev.chunk.01']
-TEST_DATA_LIST = ['data/test.chunk.01', 'data/test.chunk.02']
-
-=======
->>>>>>> e6961dbdcb0dccb7d937393876a09fe3d44df26b
 re_sc = re.compile('[\!@#$%\^&\*\(\)-=\[\]\{\}\.,/\?~\+\'"|]')
 
 
